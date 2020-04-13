@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h3 mat-dialog-title>{{data.title}}</h3>
+  <div mat-dialog-content>
+    <p>{{data.question}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      (click)="onConfirmButton()"
+      disableRipple
+      class="confirm-dialog-button"
+      color="primary"
+    >
+      {{data.confirmButtonTitle}}
+    </button>
+    <button
+      mat-raised-button
+      (click)="onCancelButton()"
+      disableRipple
+    >
+      {{data.cancelButtonTitle}}
+    </button>
+  </div>
+</div>

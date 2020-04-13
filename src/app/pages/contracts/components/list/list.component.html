@@ -1,0 +1,74 @@
+<div class="list-add-record-button" fxLayout fxLayoutAlign="end center">
+  <button
+    mat-raised-button
+    color="primary"
+    disableRipple
+    (click)="onCreateContract()"
+  >Новая запись
+  </button>
+</div>
+
+<div class="list-wrap">
+  <table mat-table [dataSource]="contractData" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="list-name-column"> Имя </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="list-age-column"> Возвраст </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nickname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="list-nikname-column"> Никнейм </th>
+      <td mat-cell *matCellDef="let element"> {{element.nickname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="employee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="list-employee-column"> Сотрудник </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox
+          [checked]="element.employee"
+          disabled
+        >
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="list-action-column"></th>
+      <td mat-cell *matCellDef="let element">
+        <div fxLayout>
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="onUpdateContract(element.id)"
+            disableRipple
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="onDeleteContract(element.id)"
+            disableRipple
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns; sticky: true"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns;"
+    ></tr>
+  </table>
+</div>
+

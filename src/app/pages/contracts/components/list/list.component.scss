@@ -1,0 +1,38 @@
+list {
+  width: 100%;
+}
+
+.list-wrap {
+  overflow: auto;
+  height: calc(100vh - 120px);
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.list-add-record-button {
+  padding: 10px;
+}
+
+.list-name-column {
+  width: 40%;
+}
+
+.list-age-column {
+  width: 5%;
+  align: ri
+}
+
+.list-nikname-column {
+  width: 30%;
+}
+
+.list-employee-column {
+  width: 5%;
+}
+
+.list-action-column {
+  width: 5%;
+}
+

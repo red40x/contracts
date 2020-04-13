@@ -1,0 +1,50 @@
+<div class="base-page" fxLayout="column" fxLayoutAlign="start center">
+  <form
+    [formGroup]="recordForm"
+    (ngSubmit)="onSubmit()"
+    fxLayout="column"
+    fxLayoutAlign="start start"
+    class="record-form"
+  >
+    <div fxLayout fxLayoutAlign="space-between center" class="record-header-wrap">
+      <h2>{{ title }}</h2>
+      <div class="record-button-wrap">
+        <button
+          mat-raised-button
+          color="primary"
+          disableRipple
+        >Записать
+        </button>
+        <button
+          mat-raised-button
+          disableRipple
+          (click)="onCancel()"
+        >Отмена
+        </button>
+      </div>
+    </div>
+    <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input formControlName="name" matInput appearance="outline">
+      <mat-error *ngIf="recordForm.get('name').hasError('required')">
+        Введите имя
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Возраст</mat-label>
+      <input formControlName="age" matInput appearance="outline">
+      <mat-error *ngIf="recordForm.get('age').hasError('min')">
+        Введите возраст больше 0
+      </mat-error>
+      <mat-error *ngIf="recordForm.get('age').hasError('max')">
+        Введите возраст меньше 100
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Никнейм</mat-label>
+      <input formControlName="nickname" matInput appearance="outline">
+    </mat-form-field>
+    <mat-checkbox formControlName="employee">сотрудник</mat-checkbox>
+  </form>
+</div>
+

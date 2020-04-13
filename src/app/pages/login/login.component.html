@@ -1,0 +1,30 @@
+<div class="base-page" fxLayout="column" fxLayoutAlign="center center">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <h2>Введите логин и пароль</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Логин</mat-label>
+      <input formControlName="login" matInput>
+      <mat-error *ngIf="loginForm.get('login').hasError('required')">
+         Введите логин
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Пароль</mat-label>
+      <input formControlName="password" matInput>
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        Введите пароль
+      </mat-error>
+    </mat-form-field>
+    <button
+      class="login-page-submit-button"
+      mat-raised-button
+      color="primary"
+      disableRipple
+    >Вход</button>
+  </form>
+</div>

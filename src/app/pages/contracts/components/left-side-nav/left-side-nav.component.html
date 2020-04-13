@@ -1,0 +1,32 @@
+<mat-tree [dataSource]="menuItems" [treeControl]="treeControl" class="side-nav-menu">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+    <li class="side-nav-menu-item-route">
+      <span
+        class="side-nav-menu-item-link-route"
+        (click)="onNodeRouteClick(node)"
+        [ngClass]="{active : setActive(actRouteParams$ | async, node) === true}"
+      >
+        {{node.name}}
+      </span>
+    </li>
+  </mat-tree-node>
+  <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <li>
+      <div class="mat-tree-node">
+        <button class="side-nav-menu-item"
+          mat-icon-button matTreeNodeToggle
+          [attr.aria-label]="'toggle ' + node.name"
+          disableRipple
+        >
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+          {{node.name}}
+        </button>
+      </div>
+      <ul [class.side-nav-tree-invisible]="!treeControl.isExpanded(node)">
+        <ng-container matTreeNodeOutlet></ng-container>
+      </ul>
+    </li>
+  </mat-nested-tree-node>
+</mat-tree>

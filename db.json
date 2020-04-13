@@ -1,0 +1,400 @@
+{
+  "contracts": [
+    {
+      "id": 99,
+      "type": "providers",
+      "name": "White Poole",
+      "age": 36,
+      "nickname": "Fitzpatrick",
+      "employee": false
+    },
+    {
+      "id": 1,
+      "type": "inbox-other",
+      "name": "Erica Richards",
+      "age": 39,
+      "nickname": "Solomon",
+      "employee": false
+    },
+    {
+      "id": 2,
+      "type": "outbox-providers",
+      "name": "Kelsey Durham",
+      "age": 27,
+      "nickname": "Juliet",
+      "employee": false
+    },
+    {
+      "id": 3,
+      "type": "other",
+      "name": "Hurst Dominguez",
+      "age": 23,
+      "nickname": "Waller",
+      "employee": false
+    },
+    {
+      "id": 5,
+      "type": "inbox-other",
+      "name": "Melisa White",
+      "age": 29,
+      "nickname": "Sara",
+      "employee": false
+    },
+    {
+      "id": 6,
+      "type": "inbox-providers",
+      "name": "Marylou Gates",
+      "age": 23,
+      "nickname": "Frankie",
+      "employee": false
+    },
+    {
+      "id": 7,
+      "type": "providers",
+      "name": "Key Beach",
+      "age": 26,
+      "nickname": "Acosta",
+      "employee": false
+    },
+    {
+      "id": 8,
+      "type": "outhbox-other",
+      "name": "Chang Weber",
+      "age": 31,
+      "nickname": "Thompson",
+      "employee": false
+    },
+    {
+      "id": 9,
+      "type": "providers",
+      "name": "Lynne Bowman",
+      "age": 23,
+      "nickname": "Delaney",
+      "employee": false
+    },
+    {
+      "id": 10,
+      "type": "inbox-other",
+      "name": "Brittany Nunez",
+      "age": 31,
+      "nickname": "Kirsten",
+      "employee": true
+    },
+    {
+      "id": 12,
+      "type": "providers",
+      "name": "Farmer Alvarado",
+      "age": 40,
+      "nickname": "Ollie",
+      "employee": false
+    },
+    {
+      "id": 13,
+      "type": "inbox-providers",
+      "name": "Hays Hess",
+      "age": 34,
+      "nickname": "Maude",
+      "employee": true
+    },
+    {
+      "id": 14,
+      "type": "providers",
+      "name": "Roxanne Davidson",
+      "age": 23,
+      "nickname": "Hilary",
+      "employee": true
+    },
+    {
+      "id": 15,
+      "type": "other",
+      "name": "Nichole Mooney",
+      "age": 20,
+      "nickname": "Wooten",
+      "employee": true
+    },
+    {
+      "id": 16,
+      "type": "other",
+      "name": "Noemi Bryan",
+      "age": 37,
+      "nickname": "Melva",
+      "employee": false
+    },
+    {
+      "id": 17,
+      "type": "providers",
+      "name": "Jane Fischer",
+      "age": 35,
+      "nickname": "Osborn",
+      "employee": true
+    },
+    {
+      "id": 18,
+      "type": "other",
+      "name": "Mendoza Mayo",
+      "age": 38,
+      "nickname": "Quinn",
+      "employee": true
+    },
+    {
+      "id": 19,
+      "type": "inbox-other",
+      "name": "Camille Mcmahon",
+      "age": 34,
+      "nickname": "Debora",
+      "employee": false
+    },
+    {
+      "id": 20,
+      "type": "outbox-providers",
+      "name": "Perez Maynard",
+      "age": 26,
+      "nickname": "Delacruz",
+      "employee": true
+    },
+    {
+      "id": 21,
+      "type": "outhbox-other",
+      "name": "Parrish Ortiz",
+      "age": 29,
+      "nickname": "Sullivan",
+      "employee": true
+    },
+    {
+      "id": 22,
+      "type": "inbox-providers",
+      "name": "Murphy Jacobson",
+      "age": 35,
+      "nickname": "Leslie",
+      "employee": false
+    },
+    {
+      "id": 23,
+      "type": "outbox-providers",
+      "name": "Tamra Austin",
+      "age": 35,
+      "nickname": "Mckay",
+      "employee": false
+    },
+    {
+      "id": 24,
+      "type": "outbox-providers",
+      "name": "Melissa Butler",
+      "age": 33,
+      "nickname": "Robertson",
+      "employee": false
+    },
+    {
+      "id": 26,
+      "type": "outhbox-other",
+      "name": "Joseph Frederick",
+      "age": 24,
+      "nickname": "Stout",
+      "employee": false
+    },
+    {
+      "id": 27,
+      "type": "outhbox-other",
+      "name": "Christensen Holmes",
+      "age": 35,
+      "nickname": "Bullock",
+      "employee": true
+    },
+    {
+      "id": 28,
+      "type": "providers",
+      "name": "Luna Blackburn",
+      "age": 24,
+      "nickname": "Patterson",
+      "employee": true
+    },
+    {
+      "id": 29,
+      "type": "outhbox-other",
+      "name": "Dawson Hill",
+      "age": 31,
+      "nickname": "Holland",
+      "employee": true
+    },
+    {
+      "id": 30,
+      "type": "other",
+      "name": "Naomi Valencia",
+      "age": 30,
+      "nickname": "Greene",
+      "employee": true
+    },
+    {
+      "id": 31,
+      "type": "outhbox-other",
+      "name": "Murray Young",
+      "age": 21,
+      "nickname": "Tracey",
+      "employee": false
+    },
+    {
+      "id": 33,
+      "type": "outbox-providers",
+      "name": "Maryellen Kline",
+      "age": 36,
+      "nickname": "Alisha",
+      "employee": true
+    },
+    {
+      "id": 34,
+      "type": "outbox-providers",
+      "name": "Taylor Alvarez",
+      "age": 36,
+      "nickname": "Carlene",
+      "employee": true
+    },
+    {
+      "name": "Kathryn Flynn",
+      "age": "90",
+      "nickname": "Whitaker",
+      "employee": true,
+      "type": "outbox-providers",
+      "id": 35
+    },
+    {
+      "id": 36,
+      "type": "other",
+      "name": "Burns Walsh",
+      "age": 33,
+      "nickname": "Bettye",
+      "employee": false
+    },
+    {
+      "id": 37,
+      "type": "outbox-providers",
+      "name": "Lara Morin",
+      "age": 20,
+      "nickname": "Odom",
+      "employee": false
+    },
+    {
+      "id": 38,
+      "type": "other",
+      "name": "Rachel Gould",
+      "age": 33,
+      "nickname": "Campbell",
+      "employee": true
+    },
+    {
+      "id": 39,
+      "type": "inbox-other",
+      "name": "Minnie Gregory",
+      "age": 27,
+      "nickname": "Harrell",
+      "employee": true
+    },
+    {
+      "name": "Fowler Griffith",
+      "age": 26,
+      "nickname": "Margery",
+      "employee": true,
+      "id": 40
+    },
+    {
+      "id": 42,
+      "type": "providers",
+      "name": "Tisha Shepard",
+      "age": 35,
+      "nickname": "Johns",
+      "employee": false
+    },
+    {
+      "id": 43,
+      "type": "outhbox-other",
+      "name": "Molly Wilcox",
+      "age": 31,
+      "nickname": "Weeks",
+      "employee": false
+    },
+    {
+      "name": "Benita Berg",
+      "age": 21,
+      "nickname": "Christy",
+      "employee": true,
+      "id": 44
+    },
+    {
+      "id": 45,
+      "type": "inbox-providers",
+      "name": "Moore Scott",
+      "age": 29,
+      "nickname": "Webb",
+      "employee": false
+    },
+    {
+      "id": 47,
+      "type": "other",
+      "name": "Bailey Allison",
+      "age": 30,
+      "nickname": "Jenifer",
+      "employee": true
+    },
+    {
+      "id": 49,
+      "type": "inbox-providers",
+      "name": "Latisha Rose",
+      "age": 32,
+      "nickname": "Beatrice",
+      "employee": false
+    },
+    {
+      "id": 1111,
+      "type": "inbox-providers",
+      "name": "Поставщик-1",
+      "age": 33,
+      "nickname": "пост-1",
+      "employee": false
+    }
+  ],
+  "menu-items": [
+    {
+      "name": "Договоры",
+      "subMenuItems": [
+        {
+          "name": "Входящие",
+          "subMenuItems": [
+            {
+              "name": "Поставщики",
+              "queryParams": "inbox-providers"
+            },
+            {
+              "name": "Прочие",
+              "queryParams": "inbox-other"
+            }
+          ]
+        },
+        {
+          "name": "Исходящие",
+          "subMenuItems": [
+            {
+              "name": "Поставщики",
+              "queryParams": "outbox-providers"
+            },
+            {
+              "name": "Прочие",
+              "queryParams": "outbox-other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Справочники",
+      "subMenuItems": [
+        {
+          "name": "Поставщики",
+          "queryParams": "providers"
+        },
+        {
+          "name": "Прочие",
+          "queryParams": "other"
+        }
+      ]
+    }
+  ]
+}

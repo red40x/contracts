@@ -1,0 +1,28 @@
+.side-nav-tree-invisible {
+  display: none;
+}
+
+.side-nav-menu-item-route{
+  padding-left: 30px !important;
+
+  & > .side-nav-menu-item-link-route {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 200;
+    &.active {
+      font-weight: 500;
+    }
+  }
+}
+
+.side-nav-menu ul,
+.side-nav-menu li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.side-nav-menu-item {
+  font-weight: 200;
+}

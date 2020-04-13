@@ -1,0 +1,9 @@
+.top-nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-nav-bar-title {
+  flex-grow: 1;
+  text-align: center;
+}
