@@ -335,7 +335,7 @@
       "employee": false
     }
   ],
-  "menu-items": [
+  "menuitems": [
     {
       "name": "Договоры",
       "subMenuItems": [

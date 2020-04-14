@@ -4,8 +4,8 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 /**
- * Интерфейс для элемента таблицы menu-items
- * @param name - наименование пункта меню в таблице menu-items
+ * Интерфейс для элемента таблицы menuItems
+ * @param name - наименование пункта меню
  * @param queryParams - пареметр, для позиционирования на нужном пукте меню - необязательный
  * @param subMenuItems - подчиненные пункты меню - необязательный
  */
@@ -48,7 +48,7 @@ export class ApiService {
    */
   getMenuItems(): Observable<MenuItem[]> {
     return this.httpClient.get<MenuItem[]>(
-      `${this.API}/menu-items`
+      `${this.API}/menuitems`
     ).pipe(
         catchError(error => {
           return throwError(error);
