@@ -1,11 +1,10 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
-
-import { ApiService, Contract } from '../../../../shared/services/api';
 import {Subscription} from 'rxjs';
 
+import { ApiService, Contract } from '../../../../shared/services/api';
 
 @Component({
   selector: 'app-record',
@@ -14,10 +13,11 @@ import {Subscription} from 'rxjs';
 })
 export class RecordComponent implements OnInit, OnDestroy {
 
-  recordForm: FormGroup;
-  private activeRouteParams: Params;
+  public recordForm: FormGroup;
   public contract: Contract;
   public title: string;
+
+  private activeRouteParams: Params;
   private subscriptions$: Subscription;
   private recordId: number;
 
@@ -28,7 +28,10 @@ export class RecordComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+    // создаем экземпляр Subscription для завершения подписок при ngOnDestroy()
     this.subscriptions$ = new Subscription();
+
+    // создаем экземпляр FormGroup с необходимыми контролами
     this.recordForm = new FormGroup({
       name: new FormControl('', [
         Validators.required
@@ -41,6 +44,7 @@ export class RecordComponent implements OnInit, OnDestroy {
       employee: new FormControl(''),
     });
 
+    // получаем значение get параметров из url
     this.subscriptions$.add(
       this.activatedRoute.queryParams
       .pipe(
@@ -49,6 +53,7 @@ export class RecordComponent implements OnInit, OnDestroy {
       .subscribe()
     );
 
+    // получаем значение id записи и при наличии id, элемент договора из базы данных
     this.subscriptions$.add(
       this.activatedRoute.params
       .pipe(
@@ -77,9 +82,13 @@ export class RecordComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // отписываемся от всех подписок
     this.subscriptions$.unsubscribe();
   }
 
+  /**
+   * Обновление или создание элемента таблицы договоров
+   */
   onSubmit() {
     if (this.recordForm.valid) {
       const subData = this.recordForm.value;
@@ -106,10 +115,16 @@ export class RecordComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Возврат к списку договоров
+   */
   onCancel() {
     this.goToList();
   }
 
+  /**
+   * Возврат к списку доворов с текущим значением get параметров в url
+   */
   goToList() {
     this.router.navigate(['/contracts/list'], {
       queryParams: {

@@ -8,9 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Error404Component } from './pages/error-404';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

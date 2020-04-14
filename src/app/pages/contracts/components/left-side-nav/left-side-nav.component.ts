@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import {Observable, Subscription} from 'rxjs';
-import {map, tap} from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { ApiService, MenuItem } from '../../../../shared/services/api';
 
@@ -13,13 +13,12 @@ import { ApiService, MenuItem } from '../../../../shared/services/api';
 })
 export class LeftSideNavComponent implements OnInit, OnDestroy {
 
-  treeControl = new NestedTreeControl<MenuItem>(menuItem => menuItem.subMenuItems);
-
+  public treeControl = new NestedTreeControl<MenuItem>(menuItem => menuItem.subMenuItems);
   public actRouteParams$: Observable<Params>;
   public menuItems: MenuItem[];
-  private subscriptions$: Subscription;
-
   public activeRouteParams: Params;
+
+  private subscriptions$: Subscription;
 
   constructor(
     private router: Router,
@@ -28,7 +27,10 @@ export class LeftSideNavComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // создаем экземпляр Subscription для завершения подписок при ngOnDestroy()
     this.subscriptions$ = new Subscription();
+
+    // получаем значение get параметров из url
     this.actRouteParams$ = this.activatedRoute.queryParams;
     this.subscriptions$.add(
       this.actRouteParams$
@@ -37,6 +39,7 @@ export class LeftSideNavComponent implements OnInit, OnDestroy {
         )
         .subscribe()
     );
+    // получаем элементы меню из базы данных
     this.subscriptions$.add(
       this.apiService.getMenuItems()
         .pipe(
@@ -50,9 +53,13 @@ export class LeftSideNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // отписываемся от всех подписок
     this.subscriptions$.unsubscribe();
   }
 
+  /**
+   * Получение признака активного пукта меню
+   */
   setActive(queryParams: Params, node: MenuItem): boolean {
     if (queryParams.type) {
       return queryParams.type === node.queryParams;
@@ -60,6 +67,9 @@ export class LeftSideNavComponent implements OnInit, OnDestroy {
     return false;
   }
 
+  /**
+   * Установка признака "открытого" у пункта меню для текущего get параметра в url
+   */
   setMenuItemsExpand(menuItems: MenuItem[]): boolean {
     let i = 0;
     while (i < menuItems.length) {
@@ -77,10 +87,16 @@ export class LeftSideNavComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Получение признака наличия поодчиненных пунктов у меню
+   */
   hasChild = (_: number, menuItem: MenuItem) => {
     return !!menuItem.subMenuItems && menuItem.subMenuItems.length > 0;
   }
 
+  /**
+   * Смена url для установки get параметров у выбранного пункта меню
+   */
   onNodeRouteClick(menuItem: MenuItem) {
     if (menuItem.queryParams) {
       this.router.navigate(

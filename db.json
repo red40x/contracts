@@ -241,14 +241,6 @@
       "employee": true
     },
     {
-      "id": 34,
-      "type": "outbox-providers",
-      "name": "Taylor Alvarez",
-      "age": 36,
-      "nickname": "Carlene",
-      "employee": true
-    },
-    {
       "name": "Kathryn Flynn",
       "age": "90",
       "nickname": "Whitaker",

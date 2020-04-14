@@ -17,9 +17,10 @@ import { DialogConfirmComponent } from '../dialog-confirm';
 })
 export class ListComponent implements OnInit, OnDestroy {
 
-  displayedColumns: string[] = ['name', 'age', 'nickname', 'employee', 'action'];
-  contractData = new MatTableDataSource<Contract>();
-  activeRouteParams: Params;
+  public displayedColumns: string[] = ['name', 'age', 'nickname', 'employee', 'action'];
+  public contractData = new MatTableDataSource<Contract>();
+
+  private activeRouteParams: Params;
   private subscriptions$: Subscription;
 
   constructor(
@@ -32,10 +33,15 @@ export class ListComponent implements OnInit, OnDestroy {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   ngOnInit(): void {
+    // создаем экземпляр Subscription для завершения подписок при ngOnDestroy()
     this.subscriptions$ = new Subscription();
+
+    // начальная сортировка таблицы
     this.sort.direction = 'asc';
     this.sort.active = 'name';
     this.contractData.sort = this.sort;
+
+    // получаем значение get параметров из url и список договоров из базы данных
     this.subscriptions$.add(
       this.activatedRoute.queryParams
         .pipe(
@@ -49,10 +55,16 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // отписываемся от всех подписок
     this.subscriptions$.unsubscribe();
   }
 
+  /**
+   * Удаление элемента таблицы договоров
+   * @param id - уникальный идентификатов элемента таблыцы договоров
+   */
   onDeleteContract(id: number) {
+    // вызываем модальный диалог с вопросом
     const confirmDialogRef = this.confirmDialog.open(
       DialogConfirmComponent, {
         width: '250px',
@@ -63,6 +75,7 @@ export class ListComponent implements OnInit, OnDestroy {
         }
       });
 
+    // получаем результат из модального диалога с вопросом
     this.subscriptions$.add(
       confirmDialogRef.afterClosed()
         .pipe(
@@ -74,6 +87,9 @@ export class ListComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Переход на страницу создания нового договра
+   */
   onCreateContract() {
     this.router.navigate(
       ['/contracts/record/'],
@@ -85,6 +101,10 @@ export class ListComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Переход на страницу редактирования договра
+   * @param id - уникальный идентификатор элемента таблыцы договоров
+   */
   onUpdateContract(id: number) {
     this.router.navigate(
       ['/contracts/record/', id],

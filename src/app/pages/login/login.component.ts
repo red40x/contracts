@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
-import { AuthService } from '../../shared/services/auth';
 
+import { AuthService } from '../../shared/services/auth';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,8 @@ import { AuthService } from '../../shared/services/auth';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  public loginForm: FormGroup;
+
   constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
@@ -18,12 +19,15 @@ export class LoginComponent implements OnInit {
       login: new FormControl('', [
         Validators.required
       ]),
-      password: new FormControl('',[
+      password: new FormControl('', [
         Validators.required
       ])
     });
   }
 
+  /**
+   * Аутентификация пользователя
+   */
   onSubmit() {
     if (this.loginForm.valid) {
       this.authService.login();

@@ -21,10 +21,16 @@ export class DialogConfirmComponent {
     @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogData
   ) {}
 
+  /**
+   * Закрытие диалога при положительном ответе
+   */
   onConfirmButton() {
     this.confirmDialogRef.close(true);
   }
 
+  /**
+   * Закрытие диалога при отрицательном ответе
+   */
   onCancelButton() {
     this.confirmDialogRef.close(false);
   }

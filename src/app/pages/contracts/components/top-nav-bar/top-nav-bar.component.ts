@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthService } from '../../../../shared/services/auth/auth.service';
 
 @Component({
@@ -13,6 +14,9 @@ export class TopNavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Отмена аутентификации пользователя
+   */
   onLogout() {
     this.authService.logout();
   }
