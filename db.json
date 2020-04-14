@@ -161,12 +161,12 @@
       "employee": true
     },
     {
-      "id": 22,
-      "type": "inbox-providers",
       "name": "Murphy Jacobson",
       "age": 35,
       "nickname": "Leslie",
-      "employee": false
+      "employee": false,
+      "type": "inbox-providers",
+      "id": 22
     },
     {
       "id": 23,
@@ -332,14 +332,6 @@
       "name": "Latisha Rose",
       "age": 32,
       "nickname": "Beatrice",
-      "employee": false
-    },
-    {
-      "id": 1111,
-      "type": "inbox-providers",
-      "name": "Поставщик-1",
-      "age": 33,
-      "nickname": "пост-1",
       "employee": false
     }
   ],
